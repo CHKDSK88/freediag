@@ -60,7 +60,7 @@
 /*
  * ISO vag specific data
  */
-struct diag_l2_vag
+/*struct diag_l2_vag
 {
 	uint8_t seq_nr; //Sequence number
 	uint8_t master; //Master flag, 1 = us, 0 = ECU
@@ -72,7 +72,7 @@ struct diag_l2_vag
 	int rxoffset;           //Offset to write into buffer
 
 	unsigned long long msg_finish_time; //a point in time when the last message finished arriving/departing
-};
+};*/
 
 /*
  * Useful internal routines

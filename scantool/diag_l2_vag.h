@@ -31,6 +31,24 @@
 #ifndef _DIAG_L2_VAG_H_
 #define _DIAG_L2_VAG_H_
 
+/*
+ * ISO vag specific data
+ */
+struct diag_l2_vag
+{
+	uint8_t seq_nr; //Sequence number
+	uint8_t master; //Master flag, 1 = us, 0 = ECU
+	uint8_t first_telegram_started;
+
+	struct diag_msg *ecu_id_telegram; //a pointer to store the ECU ID telegram received during initiation
+
+	uint8_t rxbuf[MAXRBUF]; //Receive buffer, for building message in
+	int rxoffset;           //Offset to write into buffer
+
+	unsigned long long msg_finish_time; //a point in time when the last message finished arriving/departing
+};
+
+
 #if defined(__cplusplus)
 extern "C" {
 #endif
